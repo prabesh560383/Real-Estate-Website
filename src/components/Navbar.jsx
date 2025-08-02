@@ -45,7 +45,7 @@ const Navbar = () => {
         
 
         <div className="sign-up hidden md:inline-block">
-          <button className='px-8 py-2 bg-white rounded-3xl text-black font-normal text-lg'>
+          <button className='px-8 py-2 bg-white rounded-3xl text-black font-normal text-lg cursor-pointer transform transition duration-300 hover:bg-white/60 hover:shadow-md'>
             Sign up
           </button>
         </div>

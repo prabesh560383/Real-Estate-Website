@@ -9,3 +9,10 @@ li{
     cursor: pointer
 }
 
+.desktop-menu li{
+    transition: all 0.4s ease;
+}
+
+.desktop-menu li:hover{
+    transform: scale(1.2);
+}
