@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -8,6 +8,25 @@ import * as motion from "motion/react-client"
 
 function App() {
   const [count, setCount] = useState(0)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  function changeScrollStatus(){
+    setIsScrolled(prev => !prev)
+  }
+
+  useEffect(()=>{
+    function handleScroll(){
+      if(window.scrollY >50){
+        setIsScrolled(true)  
+      }
+      else setIsScrolled(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return ()=>window.removeEventListener('scroll', handleScroll)
+  },[])
+
 
   return (
     <>

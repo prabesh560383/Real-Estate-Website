@@ -1,16 +1,34 @@
 import React, { use } from 'react'
 import { assets } from '../assets/assets'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const Navbar = () => {
 
   let [mobileMenu, setMobileMenu] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  function changeScrollStatus(){
+    setIsScrolled(prev => !prev)
+  }
+
+  useEffect(()=>{
+    function handleScroll(){
+      if(window.scrollY >50){
+        setIsScrolled(true)  
+      }
+      else setIsScrolled(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return ()=>window.removeEventListener('scroll', handleScroll)
+  },[])
 
   function toggleMobileMenu(){
     setMobileMenu(prev=>!prev)
   }
   return (
-    <nav className = 'fixed z-10 w-full py-4 top-0'>
+    <nav className = {`fixed z-10 w-full py-4 top-0 ${isScrolled ? 'bg-gray-900/80' : ''}`}>
       <div className=' container mx-auto px-6 flex justify-between items-center'> 
 
         <div className="logo w-33">
