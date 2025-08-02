@@ -5,27 +5,11 @@ import Projects from './components/Projects'
 import Testimonials from './components/Testimonials'
 import ContactUs from './components/ContactUs'
 import * as motion from "motion/react-client"
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  function changeScrollStatus(){
-    setIsScrolled(prev => !prev)
-  }
-
-  useEffect(()=>{
-    function handleScroll(){
-      if(window.scrollY >50){
-        setIsScrolled(true)  
-      }
-      else setIsScrolled(false)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return ()=>window.removeEventListener('scroll', handleScroll)
-  },[])
+  
 
 
   return (
@@ -82,6 +66,10 @@ function App() {
         >
     <ContactUs />
     </motion.div>
+
+    <Footer />
+
+
     </>
   )
 }
