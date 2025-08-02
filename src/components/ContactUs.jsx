@@ -4,10 +4,10 @@ import Button from './Button'
 
 const ContactUs = () => {
   return (
-    <div>
+    <div className= 'mt-20'>
         <Title bold_text='Contact' underline_text='With Us' caption='Ready to Make a Move? Let’s Build Your Future Together' />
 
-    <div className="form container mx-auto flex justify-center items-center  max-w-[1250px] mt-10" >
+    <div className="  form container mx-auto flex justify-center items-center  max-w-[1250px] mt-10" >
 
    
         <form action="#" className='w-3/4 flex flex-col gap-8 '>

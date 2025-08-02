@@ -5,12 +5,9 @@ import Title from './Title'
 
 const About = () => {
   return (
-    <section className='w-full'>
+    <section className='w-full mt-10'>
         <div className="container  mx-auto">
-            {/* <div className='text-center pt-18'>
-                <h2 className='text-2xl font-semibold md:text-4xl mb-2'> About  <span className='font-light underline'>Our Brand</span></h2>
-                <p className='text-[18px]  text-gray-600'>Passionate About Properties, Dedicated to <br />Your Vision</p>
-            </div> */}
+           
 
             <Title 
                 bold_text='About' 

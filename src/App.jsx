@@ -4,6 +4,7 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Testimonials from './components/Testimonials'
 import ContactUs from './components/ContactUs'
+import * as motion from "motion/react-client"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,10 +12,57 @@ function App() {
   return (
     <>
     <Hero />
-    <About />
-    <Projects />
+
+     <motion.div
+           initial={{ opacity: 0, scale: 0 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+          transition={{
+              duration: 1.5,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+        >
+    
+       <About />
+
+      </motion.div>
+
+    
+      <motion.div
+           initial={{ translateX: '-100%' }}
+           whileInView={{ translateX: '0%'}}
+           viewport={{ once: true }}
+          transition={{
+              duration: 1.1,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+        >
+         <Projects />
+      </motion.div>
+
+    <motion.div
+           initial={{ translateX: '100%' }}
+           whileInView={{ translateX: '0%'}}
+           viewport={{ once: true }}
+          transition={{
+              duration: 1.1,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+        >
     <Testimonials />
+    </motion.div>
+
+     <motion.div
+           initial={{ translateY: '-100%' }}
+           whileInView={{ translateY: '0%'}}
+           viewport={{ once: true }}
+          transition={{
+              duration: 1.1,
+              scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }}
+        >
     <ContactUs />
+    </motion.div>
     </>
   )
 }
