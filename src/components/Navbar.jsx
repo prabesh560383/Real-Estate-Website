@@ -28,7 +28,7 @@ const Navbar = () => {
     setMobileMenu(prev=>!prev)
   }
   return (
-    <nav className = {`fixed z-10 w-full py-4 top-0 ${isScrolled ? 'bg-gray-900/80' : ''}`}>
+    <nav className = {`fixed z-10 w-full py-2 top-0 ${isScrolled ? 'bg-gray-900/80' : ''}`}>
       <div className=' container mx-auto px-6 flex justify-between items-center'> 
 
         <div className="logo w-33">
